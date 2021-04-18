@@ -23,4 +23,9 @@ public class CalculadoraCDBTest {
         assertEquals(13.15, calculadora.getRendimentoBruto(), 0);
     }
     
+    @Test
+    public void TestarCalculoRendimentoBruto3(){
+        calculadora.calcularRendimentoBruto(240, 3000, 9.0);
+        assertEquals(177.53, calculadora.getRendimentoBruto(), 0);
+    }
 }
