@@ -16,5 +16,11 @@ public class CalculadoraCDBTest {
         calculadora.calcularRendimentoBruto(60, 1000, 8.5);
         assertEquals(13.97, calculadora.getRendimentoBruto(), 0);
     }
+
+    @Test
+    public void TestarCalculoRendimentoBruto2(){
+        calculadora.calcularRendimentoBruto(120, 500, 8.0);
+        assertEquals(13.15, calculadora.getRendimentoBruto(), 0);
+    }
     
 }
