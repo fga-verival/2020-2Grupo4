@@ -34,7 +34,8 @@ public class CalculadoraCDB {
         double capital,
         double rendimentoBruto,
         double impostoDeRenda){
-        this.rendimentoLiquido = 1.0829;
+        double liquido = rendimentoBruto - (rendimentoBruto*impostoDeRenda);
+        this.rendimentoLiquido = (liquido*100)/capital;
     }
 
     public double getRendimentoLiquido(){

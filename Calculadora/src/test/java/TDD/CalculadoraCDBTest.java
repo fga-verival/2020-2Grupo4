@@ -57,7 +57,7 @@ public class CalculadoraCDBTest {
         calculadora.calcularRendimentoLiquido(1000, 
             calculadora.getRendimentoBruto(),
             calculadora.getImpostoDeRenda());
-        assertEquals(1.0829, calculadora.getRendimentoLiquido(), 0);
+        assertEquals(1.0829, calculadora.getRendimentoLiquido(), 0.001);
     }
 
     @Test
@@ -68,6 +68,6 @@ public class CalculadoraCDBTest {
         calculadora.calcularRendimentoLiquido(1000, 
             calculadora.getRendimentoBruto(),
             calculadora.getImpostoDeRenda());
-        assertEquals(17.4658, calculadora.getRendimentoLiquido(), 0);
+        assertEquals(17.4658, calculadora.getRendimentoLiquido(), 0.0001);
     }
 }
