@@ -53,10 +53,21 @@ public class CalculadoraCDBTest {
     public void testarRendimentoLiquido(){
         calculadora.calcularRendimentoBruto(60, 1000, 8.5);
         calculadora.calcularImpostoDeRenda(60);
-        
+
         calculadora.calcularRendimentoLiquido(1000, 
             calculadora.getRendimentoBruto(),
             calculadora.getImpostoDeRenda());
         assertEquals(1.0829, calculadora.getRendimentoLiquido(), 0);
+    }
+
+    @Test
+    public void testarRendimentoLiquido2(){
+        calculadora.calcularRendimentoBruto(1000, 1000, 7.5);
+        calculadora.calcularImpostoDeRenda(1000);
+        
+        calculadora.calcularRendimentoLiquido(1000, 
+            calculadora.getRendimentoBruto(),
+            calculadora.getImpostoDeRenda());
+        assertEquals(17.4658, calculadora.getRendimentoLiquido(), 0);
     }
 }
