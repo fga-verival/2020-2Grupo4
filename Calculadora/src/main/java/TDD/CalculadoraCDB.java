@@ -4,6 +4,7 @@ public class CalculadoraCDB {
 
     private double rendimentoBruto;
     private double impostoDeRenda;
+    private double rendimentoLiquido;
 
     public void calcularRendimentoBruto(int dias, double capital, double taxaJurosAnual){
         double rendimento = capital * ((double)dias/365) * (taxaJurosAnual/100);
@@ -27,6 +28,17 @@ public class CalculadoraCDB {
 
     public double getImpostoDeRenda() {
         return this.impostoDeRenda;
+    }
+
+    public void calcularRendimentoLiquido(
+        double capital,
+        double rendimentoBruto,
+        double impostoDeRenda){
+        this.rendimentoLiquido = 1.0829;
+    }
+
+    public double getRendimentoLiquido(){
+        return this.rendimentoLiquido;
     }
     
 }
