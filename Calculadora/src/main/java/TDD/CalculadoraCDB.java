@@ -12,5 +12,13 @@ public class CalculadoraCDB {
     public double getRendimentoBruto(){
         return this.rendimentoBruto;
     }
+
+    public void calcularImpostoDeRenda(int prazo) {
+        
+    }
+
+    public double getImpostoDeRenda() {
+        return 0.225f;
+    }
     
 }

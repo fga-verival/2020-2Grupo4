@@ -33,6 +33,6 @@ public class CalculadoraCDBTest {
     @Test
     public void testarImpostoDeRenda() {
         calculadora.calcularImpostoDeRenda(180);
-        assertEquals(0.225f, getImpostoDeRenda(), 0);
+        assertEquals(0.225f, calculadora.getImpostoDeRenda(), 0);
     }
 }
