@@ -35,4 +35,10 @@ public class CalculadoraCDBTest {
         calculadora.calcularImpostoDeRenda(180);
         assertEquals(0.225f, calculadora.getImpostoDeRenda(), 0);
     }
+
+    @Test
+    public void testarImpostoDeRenda2() {
+        calculadora.calcularImpostoDeRenda(240);
+        assertEquals(0.20f, calculadora.getImpostoDeRenda(), 0);
+    }
 }
