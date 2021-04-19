@@ -48,4 +48,15 @@ public class CalculadoraCDBTest {
         calculadora.calcularImpostoDeRenda(800);
         assertEquals(0.15f, calculadora.getImpostoDeRenda(), 0);
     }
+
+    @Test
+    public void testarRendimentoLiquido(){
+        calculadora.calcularRendimentoBruto(60, 1000, 8.5);
+        calculadora.calcularImpostoDeRenda(60);
+        
+        calculadora.calcularRendimentoLiquido(1000, 
+            calculadora.getRendimentoBruto(),
+            calculadora.getImpostoDeRenda());
+        assertEquals(1.0829, calculadora.getRendimentoLiquido(), 0);
+    }
 }
