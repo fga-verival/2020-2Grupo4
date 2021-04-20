@@ -2,31 +2,33 @@ package TDD;
 
 public class CalculadoraCDB {
 
-    private double rendimentoBruto;
-    private double impostoDeRenda;
+    private double grossIncome;
+    private double incomeTax;
 
-    public void calcularRendimentoBruto(int dias, double capital, double taxaJurosAnual){
-        double rendimento = capital * ((double)dias/365) * (taxaJurosAnual/100);
-        this.rendimentoBruto = Math.round(rendimento * 100.0) / 100.0;
+    public void calculateGrossIncome(int days, double capital, double annualInterestRate){
+        double income = capital * ((double)days/365) * (annualInterestRate/100);
+        this.grossIncome = Math.round(income * 100.0) / 100.0;
     } 
 
-    public double getRendimentoBruto(){
-        return this.rendimentoBruto;
+    public double getGrossIncome(){
+        return this.grossIncome;
     }
 
-    public void calcularImpostoDeRenda(int prazo) {
-        if (prazo > 0 && prazo <= 180)
-            this.impostoDeRenda = 0.225f;
-        else if (prazo >= 181 && prazo <= 360)
-            this.impostoDeRenda = 0.200f;
-        else if (prazo >= 361 && prazo <= 720)
-            this.impostoDeRenda = 0.175f;
+    public void calculateIncomeTax(int term) {
+        int semester_days = 180;
+
+        if (term > 0 && term <= semester_days)
+            this.incomeTax = 0.225f;
+        else if (term > semester_days && term <= semester_days * 2)
+            this.incomeTax = 0.200f;
+        else if (term > semester_days && term <= semester_days * 3)
+            this.incomeTax = 0.175f;
         else
-            this.impostoDeRenda = 0.150f;
+            this.incomeTax = 0.150f;
     }
 
-    public double getImpostoDeRenda() {
-        return this.impostoDeRenda;
+    public double getIncomeTax() {
+        return this.incomeTax;
     }
     
 }
