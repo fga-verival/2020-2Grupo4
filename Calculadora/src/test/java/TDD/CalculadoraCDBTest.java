@@ -14,19 +14,28 @@ public class CalculadoraCDBTest {
 
     @Test
     public void TestGrossIncomeCalculation() {
-        calculator.calculateGrossIncome(60, 1000, 8.5);
+        int days = 60;
+        double capital = 1000;
+        double annualInterestRate = 8.5;
+        calculator.calculateGrossIncome(days, capital, annualInterestRate);
         assertEquals(13.97, calculator.getGrossIncome(), 0);
     }
 
     @Test
     public void TestGrossIncomeCalculation2() {
-        calculator.calculateGrossIncome(120, 500, 8.0);
+        int days = 120;
+        double capital = 500;
+        double annualInterestRate = 8.0;
+        calculator.calculateGrossIncome(days, capital, annualInterestRate);
         assertEquals(13.15, calculator.getGrossIncome(), 0);
     }
 
     @Test
     public void TestGrossIncomeCalculation3() {
-        calculator.calculateGrossIncome(240, 3000, 9.0);
+        int days = 240;
+        double capital = 3000;
+        double annualInterestRate = 9.0;
+        calculator.calculateGrossIncome(days, capital, annualInterestRate);
         assertEquals(177.53, calculator.getGrossIncome(), 0);
     }
 
