@@ -6,7 +6,8 @@ public class CalculadoraCDB {
     private double incomeTax;
 
     public void calculateGrossIncome(int days, double capital, double annualInterestRate){
-        double income = capital * ((double)days/365) * (annualInterestRate/100);
+        int yearDays = 365;
+        double income = capital * ((double)days/yearDays) * (annualInterestRate/100);
         this.grossIncome = Math.round(income * 100.0) / 100.0;
     } 
 
@@ -15,13 +16,13 @@ public class CalculadoraCDB {
     }
 
     public void calculateIncomeTax(int term) {
-        int semester_days = 180;
+        int semesterDays = 180;
 
-        if (term > 0 && term <= semester_days)
+        if (term > 0 && term <= semesterDays)
             this.incomeTax = 0.225f;
-        else if (term > semester_days && term <= semester_days * 2)
+        else if (term > semesterDays && term <= semesterDays * 2)
             this.incomeTax = 0.200f;
-        else if (term > semester_days && term <= semester_days * 3)
+        else if (term > semesterDays && term <= semesterDays * 3)
             this.incomeTax = 0.175f;
         else
             this.incomeTax = 0.150f;
