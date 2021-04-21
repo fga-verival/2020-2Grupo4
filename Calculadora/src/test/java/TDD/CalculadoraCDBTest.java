@@ -48,4 +48,37 @@ public class CalculadoraCDBTest {
         calculadora.calcularImpostoDeRenda(800);
         assertEquals(0.15f, calculadora.getImpostoDeRenda(), 0);
     }
+
+    @Test
+    public void testarRendimentoLiquido(){
+        calculadora.calcularRendimentoBruto(60, 1000, 8.5);
+        calculadora.calcularImpostoDeRenda(60);
+
+        calculadora.calcularRendimentoLiquido(1000, 
+            calculadora.getRendimentoBruto(),
+            calculadora.getImpostoDeRenda());
+        assertEquals(1.0829, calculadora.getRendimentoLiquido(), 0.001);
+    }
+
+    @Test
+    public void testarRendimentoLiquido2(){
+        calculadora.calcularRendimentoBruto(550, 400, 8.0);
+        calculadora.calcularImpostoDeRenda(550);
+        
+        calculadora.calcularRendimentoLiquido(400, 
+            calculadora.getRendimentoBruto(),
+            calculadora.getImpostoDeRenda());
+        assertEquals(9.9452, calculadora.getRendimentoLiquido(), 0.001);
+    }
+
+    @Test
+    public void testarRendimentoLiquido3(){
+        calculadora.calcularRendimentoBruto(240, 3000, 9.0);
+        calculadora.calcularImpostoDeRenda(240);
+        
+        calculadora.calcularRendimentoLiquido(3000, 
+            calculadora.getRendimentoBruto(),
+            calculadora.getImpostoDeRenda());
+        assertEquals(4.7342, calculadora.getRendimentoLiquido(), 0.001);
+    }
 }
