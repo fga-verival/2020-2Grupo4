@@ -28,6 +28,12 @@ Esse método é utilizado por causa de alguns fatores, entre eles sendo:
 
 A triangulação é uma prática utilizada no TDD, o nome é oriundo de uma analogia à triangulação de antenas, onde para encontrar a localização de um dispositivo é feito o cruzamento dos dados das três antenas mais próximas ao mesmo.
 No caso dos testes, três testes são escritos para a mesma unidade, porém com entradas distintas, para obter maior garantia de que funções estão de fato passando nos testes. 
+![](/media/triangulation.jpg)
+
+“Digamos que A e B sejam casos de teste e ★ seja o objetivo final que é uma função que soma dois números inteiros. Esta receberá dois argumentos (os somados), e seu retorno será o resultado da soma. Ao triangular, A e B terão algo em comum: testar a mesma funcionalidade -> D.”
+
+Supondo que A e B sejam casos de teste, ★ é o objetivo final, que é uma função que adiciona dois inteiros. Este receberá dois parâmetros (os parâmetros adicionados), e seu retorno será o resultado da soma. Quando for um triângulo, A e B terão algo em comum: teste a mesma função -> D.
+
 
 ### Como Triangulizar com parâmetros em frameworks de testes unitários?
 
