@@ -59,35 +59,35 @@ public class CalculadoraCDBTest {
     }
 
     @Test
-    public void testarRendimentoLiquido(){
-        calculadora.calcularRendimentoBruto(60, 1000, 8.5);
-        calculadora.calcularImpostoDeRenda(60);
+    public void testNetIncome(){
+        calculator.calculateGrossIncome(60, 1000, 8.5);
+        calculator.calculateIncomeTax(60);
 
-        calculadora.calcularRendimentoLiquido(1000, 
-            calculadora.getRendimentoBruto(),
-            calculadora.getImpostoDeRenda());
-        assertEquals(1.0829, calculadora.getRendimentoLiquido(), 0.001);
+        calculator.calculateNetIncome(1000, 
+            calculator.getGrossIncome(),
+            calculator.getIncomeTax());
+        assertEquals(1.0829, calculator.getNetIncome(), 0.001);
     }
 
     @Test
-    public void testarRendimentoLiquido2(){
-        calculadora.calcularRendimentoBruto(550, 400, 8.0);
-        calculadora.calcularImpostoDeRenda(550);
+    public void testNetIncome2(){
+        calculator.calculateGrossIncome(550, 400, 8.0);
+        calculator.calculateIncomeTax(550);
         
-        calculadora.calcularRendimentoLiquido(400, 
-            calculadora.getRendimentoBruto(),
-            calculadora.getImpostoDeRenda());
-        assertEquals(9.9452, calculadora.getRendimentoLiquido(), 0.001);
+        calculator.calculateNetIncome(400, 
+            calculator.getGrossIncome(),
+            calculator.getIncomeTax());
+        assertEquals(9.9452, calculator.getNetIncome(), 0.001);
     }
 
     @Test
-    public void testarRendimentoLiquido3(){
-        calculadora.calcularRendimentoBruto(240, 3000, 9.0);
-        calculadora.calcularImpostoDeRenda(240);
+    public void testNetIncome3(){
+        calculator.calculateGrossIncome(240, 3000, 9.0);
+        calculator.calculateIncomeTax(240);
         
-        calculadora.calcularRendimentoLiquido(3000, 
-            calculadora.getRendimentoBruto(),
-            calculadora.getImpostoDeRenda());
-        assertEquals(4.7342, calculadora.getRendimentoLiquido(), 0.001);
+        calculator.calculateNetIncome(3000, 
+            calculator.getGrossIncome(),
+            calculator.getIncomeTax());
+        assertEquals(4.7342, calculator.getNetIncome(), 0.001);
     }
 }
