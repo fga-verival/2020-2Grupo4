@@ -4,6 +4,7 @@ public class CalculadoraCDB {
 
     private double grossIncome;
     private double incomeTax;
+    private double rendimentoLiquido;
 
     public void calculateGrossIncome(int days, double capital, double annualInterestRate){
         int yearDays = 365;
@@ -30,6 +31,18 @@ public class CalculadoraCDB {
 
     public double getIncomeTax() {
         return this.incomeTax;
+    }
+
+    public void calcularRendimentoLiquido(
+        double capital,
+        double rendimentoBruto,
+        double impostoDeRenda){
+        double liquido = rendimentoBruto - (rendimentoBruto*impostoDeRenda);
+        this.rendimentoLiquido = (liquido*100)/capital;
+    }
+
+    public double getRendimentoLiquido(){
+        return this.rendimentoLiquido;
     }
     
 }
