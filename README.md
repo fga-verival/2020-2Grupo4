@@ -17,6 +17,16 @@
 
 ## TDD - Test Driven Development
 
+O TDD é um processo de desenvolvimento de software orientado a testes onde inicia-se pelos testes antes de qualquer código, sempre seguindo o ciclo que vai do vermelho (testes não passam) segue ao verde (testes passam) e caso necessário o refatoramento.
+
+### Etapas detalhadas:
+
+1. Cria-se o teste que irá falhar por não haver codígo;
+2. Aplica esse teste e verifica as falhas e o objetivo da codificação;
+3. Cria-se a funcionalidade com o foco em passar no teste da forma mais simples possível;
+4. Testa esse funcionalidade aplicando o método de triangulação e caso falte ao desenvolvedor conhecimento suficiente o método da falsificação;
+5. Refatora-se as funcionalidades para estarem de acordo com as boas práticas e certificar o funcionamento e a qualidade.
+
 ## Falsificação
 
 A técnica de falsificação consiste em especificar o valor de retorno de uma função, ou procedimento, ou método, enfim, de maneira literal no código de acordo com o resultado esperado pelo teste. Isso faz com que o teste obtenha sucesso, embora a função a qual ele testou esteja falsificando o valor de retorno. Isso dá sentido à frase: falsifique até realmente construir.
@@ -41,6 +51,7 @@ A triangulação é feita de forma bem simples, onde dentro dos frameworks de te
 
 ## Análise Crítica
 
+A utilização dessa 
 
 
 
