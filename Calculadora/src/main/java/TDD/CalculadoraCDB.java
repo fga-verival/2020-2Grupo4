@@ -2,44 +2,47 @@ package TDD;
 
 public class CalculadoraCDB {
 
-    private double rendimentoBruto;
-    private double impostoDeRenda;
-    private double rendimentoLiquido;
+    private double grossIncome;
+    private double incomeTax;
+    private double netIncome;
 
-    public void calcularRendimentoBruto(int dias, double capital, double taxaJurosAnual){
-        double rendimento = capital * ((double)dias/365) * (taxaJurosAnual/100);
-        this.rendimentoBruto = Math.round(rendimento * 100.0) / 100.0;
+    public void calculateGrossIncome(int days, double capital, double annualInterestRate){
+        int yearDays = 365;
+        double income = capital * ((double)days/yearDays) * (annualInterestRate/100);
+        this.grossIncome = Math.round(income * 100.0) / 100.0;
     } 
 
-    public double getRendimentoBruto(){
-        return this.rendimentoBruto;
+    public double getGrossIncome(){
+        return this.grossIncome;
     }
 
-    public void calcularImpostoDeRenda(int prazo) {
-        if (prazo > 0 && prazo <= 180)
-            this.impostoDeRenda = 0.225f;
-        else if (prazo >= 181 && prazo <= 360)
-            this.impostoDeRenda = 0.200f;
-        else if (prazo >= 361 && prazo <= 720)
-            this.impostoDeRenda = 0.175f;
-        else
-            this.impostoDeRenda = 0.150f;
+    public void calculateIncomeTax(int term) {
+        int semesterDays = 180;
+        if (term < 0)
+            this.incomeTax = 0;
+        else if (term <= semesterDays)
+            this.incomeTax = 0.225f;
+        else if (term <= semesterDays * 2)
+            this.incomeTax = 0.200f;
+        else if (term <= semesterDays * 4)
+            this.incomeTax = 0.175f;
+        else this.incomeTax = 0.150f;
     }
 
-    public double getImpostoDeRenda() {
-        return this.impostoDeRenda;
+    public double getIncomeTax() {
+        return this.incomeTax;
     }
 
-    public void calcularRendimentoLiquido(
+    public void calculateNetIncome(
         double capital,
-        double rendimentoBruto,
-        double impostoDeRenda){
-        double liquido = rendimentoBruto - (rendimentoBruto*impostoDeRenda);
-        this.rendimentoLiquido = (liquido*100)/capital;
+        double grossIncome,
+        double incomeTax){
+        double net = grossIncome - (grossIncome*incomeTax);
+        this.netIncome = (net*100)/capital;
     }
 
-    public double getRendimentoLiquido(){
-        return this.rendimentoLiquido;
+    public double getNetIncome(){
+        return this.netIncome;
     }
     
 }

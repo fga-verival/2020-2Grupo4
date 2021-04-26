@@ -5,80 +5,89 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CalculadoraCDBTest {
-    private CalculadoraCDB calculadora;
+    private CalculadoraCDB calculator;
 
     @Before
     public void setup() {
-        calculadora = new CalculadoraCDB();
+        calculator = new CalculadoraCDB();
     }
 
     @Test
-    public void TestarCalculoRendimentoBruto() {
-        calculadora.calcularRendimentoBruto(60, 1000, 8.5);
-        assertEquals(13.97, calculadora.getRendimentoBruto(), 0);
+    public void TestGrossIncomeCalculation() {
+        int days = 60;
+        double capital = 1000;
+        double annualInterestRate = 8.5;
+        calculator.calculateGrossIncome(days, capital, annualInterestRate);
+        assertEquals(13.97, calculator.getGrossIncome(), 0);
     }
 
     @Test
-    public void TestarCalculoRendimentoBruto2() {
-        calculadora.calcularRendimentoBruto(120, 500, 8.0);
-        assertEquals(13.15, calculadora.getRendimentoBruto(), 0);
+    public void TestGrossIncomeCalculation2() {
+        int days = 120;
+        double capital = 500;
+        double annualInterestRate = 8.0;
+        calculator.calculateGrossIncome(days, capital, annualInterestRate);
+        assertEquals(13.15, calculator.getGrossIncome(), 0);
     }
 
     @Test
-    public void TestarCalculoRendimentoBruto3() {
-        calculadora.calcularRendimentoBruto(240, 3000, 9.0);
-        assertEquals(177.53, calculadora.getRendimentoBruto(), 0);
+    public void TestGrossIncomeCalculation3() {
+        int days = 240;
+        double capital = 3000;
+        double annualInterestRate = 9.0;
+        calculator.calculateGrossIncome(days, capital, annualInterestRate);
+        assertEquals(177.53, calculator.getGrossIncome(), 0);
     }
 
     @Test
-    public void testarImpostoDeRenda() {
-        calculadora.calcularImpostoDeRenda(180);
-        assertEquals(0.225f, calculadora.getImpostoDeRenda(), 0);
+    public void testIncomeTax() {
+        calculator.calculateIncomeTax(180);
+        assertEquals(0.225f, calculator.getIncomeTax(), 0);
     }
 
     @Test
-    public void testarImpostoDeRenda2() {
-        calculadora.calcularImpostoDeRenda(240);
-        assertEquals(0.20f, calculadora.getImpostoDeRenda(), 0);
+    public void testIncomeTax2() {
+        calculator.calculateIncomeTax(240);
+        assertEquals(0.20f, calculator.getIncomeTax(), 0);
     }
 
     @Test
-    public void testarImpostoDeRenda3() {
-        calculadora.calcularImpostoDeRenda(700);
-        calculadora.calcularImpostoDeRenda(800);
-        assertEquals(0.15f, calculadora.getImpostoDeRenda(), 0);
+    public void testIncomeTax3() {
+        calculator.calculateIncomeTax(700);
+        calculator.calculateIncomeTax(800);
+        assertEquals(0.15f, calculator.getIncomeTax(), 0);
     }
 
     @Test
-    public void testarRendimentoLiquido(){
-        calculadora.calcularRendimentoBruto(60, 1000, 8.5);
-        calculadora.calcularImpostoDeRenda(60);
+    public void testNetIncome(){
+        calculator.calculateGrossIncome(60, 1000, 8.5);
+        calculator.calculateIncomeTax(60);
 
-        calculadora.calcularRendimentoLiquido(1000, 
-            calculadora.getRendimentoBruto(),
-            calculadora.getImpostoDeRenda());
-        assertEquals(1.0829, calculadora.getRendimentoLiquido(), 0.001);
+        calculator.calculateNetIncome(1000, 
+            calculator.getGrossIncome(),
+            calculator.getIncomeTax());
+        assertEquals(1.0829, calculator.getNetIncome(), 0.001);
     }
 
     @Test
-    public void testarRendimentoLiquido2(){
-        calculadora.calcularRendimentoBruto(550, 400, 8.0);
-        calculadora.calcularImpostoDeRenda(550);
+    public void testNetIncome2(){
+        calculator.calculateGrossIncome(550, 400, 8.0);
+        calculator.calculateIncomeTax(550);
         
-        calculadora.calcularRendimentoLiquido(400, 
-            calculadora.getRendimentoBruto(),
-            calculadora.getImpostoDeRenda());
-        assertEquals(9.9452, calculadora.getRendimentoLiquido(), 0.001);
+        calculator.calculateNetIncome(400, 
+            calculator.getGrossIncome(),
+            calculator.getIncomeTax());
+        assertEquals(9.9452, calculator.getNetIncome(), 0.001);
     }
 
     @Test
-    public void testarRendimentoLiquido3(){
-        calculadora.calcularRendimentoBruto(240, 3000, 9.0);
-        calculadora.calcularImpostoDeRenda(240);
+    public void testNetIncome3(){
+        calculator.calculateGrossIncome(240, 3000, 9.0);
+        calculator.calculateIncomeTax(240);
         
-        calculadora.calcularRendimentoLiquido(3000, 
-            calculadora.getRendimentoBruto(),
-            calculadora.getImpostoDeRenda());
-        assertEquals(4.7342, calculadora.getRendimentoLiquido(), 0.001);
+        calculator.calculateNetIncome(3000, 
+            calculator.getGrossIncome(),
+            calculator.getIncomeTax());
+        assertEquals(4.7342, calculator.getNetIncome(), 0.001);
     }
 }
