@@ -18,15 +18,15 @@ public class CalculadoraCDB {
 
     public void calculateIncomeTax(int term) {
         int semesterDays = 180;
-
-        if (term > 0 && term <= semesterDays)
+        if (term < 0)
+            this.incomeTax = 0;
+        else if (term <= semesterDays)
             this.incomeTax = 0.225f;
-        else if (term > semesterDays && term <= semesterDays * 2)
+        else if (term <= semesterDays * 2)
             this.incomeTax = 0.200f;
-        else if (term > semesterDays && term <= semesterDays * 3)
+        else if (term <= semesterDays * 4)
             this.incomeTax = 0.175f;
-        else
-            this.incomeTax = 0.150f;
+        else this.incomeTax = 0.150f;
     }
 
     public double getIncomeTax() {
