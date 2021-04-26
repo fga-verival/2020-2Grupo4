@@ -25,7 +25,8 @@ O TDD é um processo de desenvolvimento de software orientado a testes onde inic
 2. Aplica esse teste e verifica as falhas e o objetivo da codificação;
 3. Cria-se a funcionalidade com o foco em passar no teste da forma mais simples possível;
 4. Testa esse funcionalidade aplicando o método de triangulação e caso falte ao desenvolvedor conhecimento suficiente o método da falsificação;
-5. Refatora-se as funcionalidades para estarem de acordo com as boas práticas e certificar o funcionamento e a qualidade.
+5. Refatora-se as funcionalidades para estarem de acordo com as boas práticas e certificar o funcionamento e a qualidade;
+6. Retorna a criação de teste.
 
 ## Falsificação
 
@@ -51,7 +52,20 @@ A triangulação é feita de forma bem simples, onde dentro dos frameworks de te
 
 ## Análise Crítica
 
-A utilização dessa 
+A utilização desse processo inicialmente pode gerar uma leve perda de produtividade devido a adaptação, mas a sua utilização contínua proporciona aos desenvolvedores uma maior produtividade com o aperfeiçoamento desse processo e a qualidade que ela proporciona, permitindo que ao se familiarizar com esse método o desenvolvedor crie códigos cada vez mais precisos e seguros, o que ao final aumenta a produtividade também visto a menor necessidade de refatoração posterior.
+
+### Pontos positivos:
+
+* Criar um código sabendo exatamente o que ele precisa entregar;
+* Poder sair de um problema sem solução e sentir a progressão do projeto;
+* Segurança ao entregar o código;
+* Qualidade do código;
+* A suíte de testes é uma valiosa documentação.
+
+### Pontos negativos:
+
+* Curva de aprendizado;
+* Dificuldade inicial de criar o teste.
 
 
 
@@ -64,3 +78,7 @@ ROCHA, Helder. **Desenvolvimento Guiado por Testes com JUnit.** Disponível em: 
 BECK, Kent. **Test-Driven Development.** Disponível em: https://ptgmedia.pearsoncmg.com/images/9780321146533/samplepages/0321146530.pdf. Acesso em: 17 de abril de 2021. 
 
 Groce, Alex et. al.How Verified (or Tested) is My Code? Falsification-Driven Verification and Testing. https://agroce.github.io/asej18.pdf . página 35
+
+**Entenda o que é TDD e quais são as suas vantagens - Blog da Locaweb**. Blog da Locaweb. Disponível em: https://blog.locaweb.com.br/temas/codigo-aberto/entenda-o-que-e-tdd-e-quais-sao-as-suas-vantagens. Acesso em: 25 de Abril de 2021.
+
+‌
